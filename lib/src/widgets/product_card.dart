@@ -1,8 +1,6 @@
 import 'package:credpal_test/src/data/product_model.dart';
-import 'package:credpal_test/src/utils/assets.dart';
 import 'package:credpal_test/src/utils/text_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -25,7 +23,7 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: Colors.white,
         ),
-        constraints: const BoxConstraints(maxWidth: 165),
+        constraints: const BoxConstraints(maxWidth: 175),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Stack(
           children: [

@@ -18,6 +18,24 @@ TextStyle blackStyle(
   );
 }
 
+TextStyle thickBlackStyle(
+  double size,
+  Color color, {
+  TextDecoration? decoration,
+  String? family,
+  double? letterSpacing,
+}) {
+  return TextStyle(
+    fontSize: size,
+    color: color,
+    fontWeight: FontWeight.w900,
+    letterSpacing: letterSpacing,
+    height: 1.3,
+    decoration: decoration,
+    fontFamily: family ?? 'Avenir',
+  );
+}
+
 TextStyle boldStyle(
   double size,
   Color color, {
