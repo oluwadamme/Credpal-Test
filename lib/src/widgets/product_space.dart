@@ -1,9 +1,6 @@
 import 'package:credpal_test/src/data/product_model.dart';
-import 'package:credpal_test/src/utils/assets.dart';
-import 'package:credpal_test/src/utils/text_util.dart';
 import 'package:credpal_test/src/widgets/product_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ProductSpace extends StatelessWidget {
   const ProductSpace({

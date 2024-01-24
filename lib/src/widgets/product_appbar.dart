@@ -26,9 +26,13 @@ class ProductAppBar extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(
-                'Shopping limit: ₦0',
-                style: mediumStyle(12, const Color(0xFF20294A)),
+              RichText(
+                text: TextSpan(text: "Shopping limit: ", style: mediumStyle(12, const Color(0xFF20294A)), children: [
+                  TextSpan(
+                    text: '₦0',
+                    style: normalStyle(12, const Color(0xFF20294A), family: ""),
+                  )
+                ]),
               ),
               const SizedBox(height: 10),
               TextButton(
