@@ -1,5 +1,7 @@
+import 'package:credpal_test/src/data/product_model.dart';
 import 'package:credpal_test/src/utils/assets.dart';
 import 'package:credpal_test/src/utils/text_util.dart';
+import 'package:credpal_test/src/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -108,108 +110,30 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 140,
+                  height: 180,
                   width: MediaQuery.of(context).size.width,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => const ProductCard(),
+                    itemBuilder: (context, index) => ProductCard(product: productList2[index]),
                     separatorBuilder: (context, index) => const SizedBox(width: 24),
-                    itemCount: 4,
+                    itemCount: productList2.length,
                   ),
                 ),
                 const SizedBox(height: 26),
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: 140,
+                  height: 180,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => const ProductCard(),
+                    itemBuilder: (context, index) => ProductCard(product: productList[index]),
                     separatorBuilder: (context, index) => const SizedBox(width: 24),
-                    itemCount: 4,
+                    itemCount: productList.length,
                   ),
                 ),
               ],
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class ProductCard extends StatelessWidget {
-  const ProductCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 10,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      color: Colors.white,
-      shadowColor: const Color(0x0C000000),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-        ),
-        constraints: const BoxConstraints(maxWidth: 161),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Image.asset(
-                    "assets/images/Product Image.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'iPhone XS Max 4GBbe',
-                  style: blackStyle(14, Colors.black),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    Text('₦ 39,780', style: blackStyle(14, const Color(0xFF274FED), family: "")),
-                    const SizedBox(width: 14),
-                    Text('₦ 88,000',
-                        style: mediumStyle(12, const Color(0xFFB2B2CB),
-                            family: '', decoration: TextDecoration.lineThrough))
-                  ],
-                )
-              ],
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-              decoration: const ShapeDecoration(
-                color: Colors.white,
-                shape: OvalBorder(),
-                shadows: [
-                  BoxShadow(
-                    color: Color(0x0C000000),
-                    blurRadius: 10,
-                    offset: Offset(0, 4),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Image.asset(
-                "assets/images/Pay40.png",
-                fit: BoxFit.scaleDown,
-              ),
-            )
-          ],
-        ),
       ),
     );
   }
